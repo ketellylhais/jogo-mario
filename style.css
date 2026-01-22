@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    position: fixed;
+    animation: background-animation 60s linear forwards;
+    width: 700px;
+    height: 500px;
+    border: 2px solid rgb(37, 132, 170);
+    border-bottom: 15px solid rgb(13, 158, 13);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.395);
+    overflow: hidden;  
+}
+
+.play{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height:40px ;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.279);
+    background-color: white;
+    color: rgb(0, 0, 0);
+    font-family: "Pixelify Sans", sans-serif;
+    cursor: pointer;
+    display: none;
+}
+
+.score{
+    position: absolute;
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+    width: 100%;
+    justify-content: end;
+    text-align: end;
+    left: -40px;
+}
+
+.reiniciar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90px;
+    height:40px ;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.279);
+    background-color: white;
+    color: rgb(0, 0, 0);
+    font-family: "Pixelify Sans", sans-serif;
+    cursor: pointer;
+    display: none;
+}
+
+.exibirPontuacao{
+    position: absolute;
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 1.3em;
+    width: 100%;
+    top: 35%;
+    left: 10%;
+    transform: translate(30%, -50%);
+
+}
+
+
+
+
+.pipe{
+    position: absolute;
+    width: 70px;
+    bottom: 0;
+    
+}
+
+.pipeAnimation {
+    animation: animation-pipe 1.5s linear infinite;
+}
+
+.mario{
+    position: absolute;
+    width: 120px;
+    bottom: 0px;
+    
+}
+
+.jump{
+    animation: jump 500ms ease-out ;
+}
+
+.clouds{
+    position: absolute;
+    display: flex;
+    top: 30px;
+    width: 400px;
+    justify-content: center;
+    animation: clouds-animation 20s linear infinite;
+}
+
+
+@keyframes animation-pipe{
+    from{
+        left: 700px;
+        
+
+    }
+    to{
+        left: -100px;
+    }
+}
+
+@keyframes jump{
+    0%{
+        bottom: 0;
+    }
+    40%{
+        bottom: 180px;
+    }
+    50%{
+        bottom: 180px;
+    }
+    60%{
+        bottom: 180px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation{
+     from{
+        left: 700px;
+        
+
+    }
+    to{
+        left: -400px;
+    }
+}
+
+
+@keyframes background-animation{
+     0% {
+    background-image: linear-gradient(rgb(39, 148, 190), rgb(125, 212, 247), rgb(226, 237, 199)); /* dia */
+  }
+  25% {
+    background-image: linear-gradient(rgb(60, 130, 180), rgb(110, 170, 200), rgb(200, 220, 190)); /* tarde */
+  }
+  50% {
+    background-image: linear-gradient(rgb(40, 90, 150), rgb(80, 120, 160), rgb(140, 160, 160)); /* pôr do sol */
+  }
+  75% {
+    background-image: linear-gradient(rgb(20, 60, 100), rgb(40, 80, 120), rgb(80, 90, 100)); /* entardecer */
+  }
+  100% {
+    background-image: linear-gradient(rgb(10, 30, 60), rgb(20, 40, 70), rgb(30, 30, 40)); /* noite */
+  }
+}
+
+
+@media(max-width:678px){
+    
+    html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+    .container{
+        position: relative;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        padding: 0px;
+        margin:0;
+        border-radius: 0px;
+    }
+
+    .score{
+        left: -10px;
+    }
+
+    .exibirPontuacao{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-40%, -50%);
+        width: 180px;
+        height:40px;
+    }
+}
